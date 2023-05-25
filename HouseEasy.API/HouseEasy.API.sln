@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseEasy.API", "HouseEasy.API\HouseEasy.API.csproj", "{1175F4CC-1769-4B1E-BBEC-3359318972FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HouseEasy.API", "HouseEasy.API", "{8DD0A068-F51B-4A17-952B-6309913A0F6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HouseEasy.Domain", "HouseEasy.Domain", "{C770F763-5F69-4C71-937D-9AFB533F3379}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HouseEasy.Data", "HouseEasy.Data", "{88B562DA-A82B-42A1-8F95-8F1B32223CC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseEasy.Data", "HouseEasy.Data\HouseEasy.Data\HouseEasy.Data.csproj", "{18100673-1095-451E-A9BE-4E0AB7F6DCF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1175F4CC-1769-4B1E-BBEC-3359318972FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1175F4CC-1769-4B1E-BBEC-3359318972FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1175F4CC-1769-4B1E-BBEC-3359318972FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1175F4CC-1769-4B1E-BBEC-3359318972FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18100673-1095-451E-A9BE-4E0AB7F6DCF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18100673-1095-451E-A9BE-4E0AB7F6DCF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18100673-1095-451E-A9BE-4E0AB7F6DCF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18100673-1095-451E-A9BE-4E0AB7F6DCF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1175F4CC-1769-4B1E-BBEC-3359318972FE} = {8DD0A068-F51B-4A17-952B-6309913A0F6D}
+		{18100673-1095-451E-A9BE-4E0AB7F6DCF9} = {88B562DA-A82B-42A1-8F95-8F1B32223CC9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBD5877B-90F1-4D38-9F25-548820FC06A5}
+	EndGlobalSection
+EndGlobal
