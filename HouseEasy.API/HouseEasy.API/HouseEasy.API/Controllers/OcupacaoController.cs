@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using HouseEasy.Application.Contracts.Ocupacoes;
-using HouseEasy.Domain.Entities.Ocupacao;
+using HouseEasy.Application.Contracts.Request.Ocupacoes;
+using HouseEasy.Domain.Entities.Ocupacoes;
 using HouseEasy.Domain.Interfaces.Service.Ocupacoes;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,9 +30,13 @@ namespace HouseEasy.API.Controllers
         // GET api/<OcupacaoController>/5
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(OcupacaoRequest), 200)]
-        public OcupacaoRequest GetById(int id)
+        public IActionResult GetById(int id)
         {
-            return _mapper.Map<OcupacaoRequest>(_service.GetById(id));
+            Ocupacao? ocupacao = _service.GetById(id);
+            if (ocupacao == null)
+                return NotFound("Registro não encontrado");
+
+            return Ok(_mapper.Map<OcupacaoRequest>(_service.GetById(id)));
         }
 
         // POST api/<OcupacaoController>

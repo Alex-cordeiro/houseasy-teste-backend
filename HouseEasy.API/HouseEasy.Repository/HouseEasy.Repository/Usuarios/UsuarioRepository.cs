@@ -36,8 +36,14 @@ namespace HouseEasy.Repository.Usuarios
            return expression != null ? 
                 _context.Usuarios
                         .Where(expression)
+                        .Include(x => x.Endereco)
+                        .Include(x => x.Ocupacoes)
+                        .Include(x => x.Telefone)
                         .AsQueryable().AsNoTracking() :
                 _context.Usuarios
+                        .Include(x => x.Endereco)
+                        .Include(x => x.Ocupacoes)
+                        .Include(x => x.Telefone)
                         .AsQueryable().AsNoTracking();
         }
 

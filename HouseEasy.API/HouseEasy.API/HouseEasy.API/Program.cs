@@ -1,13 +1,13 @@
 using HouseEasy.API.Profiles;
 using HouseEasy.Data;
 using HouseEasy.IOC;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddAutoMapper(typeof(AutomapperProfile));
-
 
 builder.Services.SetupDataContext(builder.Configuration);
 
@@ -16,9 +16,16 @@ builder.Services.SetupService();
 
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "API de Usuarios",
+        Description = "Aplicação de cadastro de usuarios e seus dados como endereço, telefones e ocupações.",
+    });
+});
 
 var app = builder.Build();
 

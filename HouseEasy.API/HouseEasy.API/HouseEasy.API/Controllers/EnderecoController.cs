@@ -1,13 +1,8 @@
 ﻿using AutoMapper;
-using HouseEasy.Application.Contracts.Enderecos;
-using HouseEasy.Application.Contracts.Usuarios;
+using HouseEasy.Application.Contracts.Request.Enderecos;
 using HouseEasy.Domain.Entities.Enderecos;
-using HouseEasy.Domain.Entities.Usuarios;
 using HouseEasy.Domain.Interfaces.Service.Enderecos;
-using HouseEasy.Domain.Interfaces.Service.Usuarios;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace HouseEasy.API.Controllers
 {
@@ -24,7 +19,6 @@ namespace HouseEasy.API.Controllers
             _mapper = mapper;
         }
 
-
         // GET: api/<EnderecoController>
         [HttpGet]
         [ProducesResponseType(typeof(List<EnderecoRequest>), 200)]
@@ -36,9 +30,13 @@ namespace HouseEasy.API.Controllers
         // GET api/<EnderecoController>/5
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(EnderecoRequest), 200)]
-        public EnderecoRequest GetById(int id)
+        public IActionResult GetById(int id)
         {
-            return _mapper.Map<EnderecoRequest>(_service.GetById(id));
+            Endereco? endereco = _service.GetById(id);
+            if(endereco == null)
+                return NotFound("Registro não encontrado");
+
+            return Ok(_mapper.Map<EnderecoRequest>(endereco));
         }
 
         // POST api/<EnderecoController>

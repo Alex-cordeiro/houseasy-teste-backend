@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HouseEasy.Application.Contracts.Telefones;
+using HouseEasy.Application.Contracts.Request.Telefones;
 using HouseEasy.Domain.Entities.Telefones;
 using HouseEasy.Domain.Interfaces.Service.Telefones;
 using Microsoft.AspNetCore.Mvc;
@@ -30,9 +30,13 @@ namespace HouseEasy.API.Controllers
         // GET api/<TelefoneController>/5
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(TelefoneRequest), 200)]
-        public TelefoneRequest GetById(int id)
+        public IActionResult GetById(int id)
         {
-            return _mapper.Map<TelefoneRequest>(_service.GetById(id));
+            Telefone? telefone = _service.GetById(id);
+            if (telefone == null)
+                return NotFound("Registro não encontrado");
+
+            return Ok(_mapper.Map<TelefoneRequest>(_service.GetById(id)));
         }
 
         // POST api/<TelefoneController>

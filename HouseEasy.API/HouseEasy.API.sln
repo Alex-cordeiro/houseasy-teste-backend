@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseEasy.Service", "HouseE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseEasy.Repository", "HouseEasy.Repository\HouseEasy.Repository\HouseEasy.Repository.csproj", "{7F54A12A-5350-4334-81F3-5D69A2FFFD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseEasy.Application", "HouseEasy.Application\HouseEasy.Application\HouseEasy.Application.csproj", "{23606F69-A4F2-4CCB-9093-8C28E34B9ADB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseEasy.Application", "HouseEasy.Application\HouseEasy.Application\HouseEasy.Application.csproj", "{23606F69-A4F2-4CCB-9093-8C28E34B9ADB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseEasy.API", "HouseEasy.API\HouseEasy.API\HouseEasy.API.csproj", "{E3212414-489A-4932-A211-D49C85530B76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseEasy.API", "HouseEasy.API\HouseEasy.API\HouseEasy.API.csproj", "{E3212414-489A-4932-A211-D49C85530B76}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{07F8ABD3-DF37-4DE9-BADC-E9A0BB942B04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{E3212414-489A-4932-A211-D49C85530B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3212414-489A-4932-A211-D49C85530B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3212414-489A-4932-A211-D49C85530B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F8ABD3-DF37-4DE9-BADC-E9A0BB942B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F8ABD3-DF37-4DE9-BADC-E9A0BB942B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F8ABD3-DF37-4DE9-BADC-E9A0BB942B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F8ABD3-DF37-4DE9-BADC-E9A0BB942B04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

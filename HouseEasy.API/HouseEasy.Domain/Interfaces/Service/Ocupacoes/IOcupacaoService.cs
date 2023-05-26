@@ -1,5 +1,5 @@
 ﻿using HouseEasy.Domain.Entities.Base;
-using HouseEasy.Domain.Entities.Ocupacao;
+using HouseEasy.Domain.Entities.Ocupacoes;
 
 namespace HouseEasy.Domain.Interfaces.Service.Ocupacoes
 {

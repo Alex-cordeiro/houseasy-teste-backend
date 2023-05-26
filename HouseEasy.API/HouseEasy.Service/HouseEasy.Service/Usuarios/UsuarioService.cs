@@ -29,7 +29,7 @@ namespace HouseEasy.Service.Usuarios
 
         public IEnumerable<Usuario> GetAll()
         {
-            return _repository.Get();
+            return _repository.Get().ToList();
         }
 
         public Usuario GetById(int id)

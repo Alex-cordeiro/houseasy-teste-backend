@@ -22,9 +22,12 @@ namespace HouseEasy.Service.Enderecos
         {
             var existEntity = _repository.Get(x => x.Id.Equals(id)).FirstOrDefault();
             if (existEntity != null)
-                return false;
-            _repository.Remove(existEntity);
-            return true;
+            {
+                _repository.Remove(existEntity);
+                return true;
+            }
+
+            return false;
         }
 
         public IEnumerable<Endereco> GetAll()

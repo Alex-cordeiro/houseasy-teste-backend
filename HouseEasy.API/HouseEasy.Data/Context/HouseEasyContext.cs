@@ -1,5 +1,5 @@
 ﻿using HouseEasy.Domain.Entities.Enderecos;
-using HouseEasy.Domain.Entities.Ocupacao;
+using HouseEasy.Domain.Entities.Ocupacoes;
 using HouseEasy.Domain.Entities.Telefones;
 using HouseEasy.Domain.Entities.Usuarios;
 using Microsoft.EntityFrameworkCore;

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  houseeasy.api:
+    image: ${DOCKER_REGISTRY-}houseeasyapi
+    build:
+      context: .
+      dockerfile: HouseEasy.API/HouseEasy.API/Dockerfile

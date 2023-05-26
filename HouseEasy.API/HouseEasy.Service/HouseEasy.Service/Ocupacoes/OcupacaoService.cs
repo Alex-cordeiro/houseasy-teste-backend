@@ -1,4 +1,4 @@
-﻿using HouseEasy.Domain.Entities.Ocupacao;
+﻿using HouseEasy.Domain.Entities.Ocupacoes;
 using HouseEasy.Domain.Interfaces.Repository.Ocupacoes;
 using HouseEasy.Domain.Interfaces.Service.Ocupacoes;
 
@@ -7,6 +7,12 @@ namespace HouseEasy.Service.Ocupacoes
     public class OcupacaoService : IOcupacaoService
     {
         private readonly IOcupacaoRepository _repository;
+
+        public OcupacaoService(IOcupacaoRepository repository)
+        {
+            _repository = repository;
+        }
+
         public Task<Ocupacao> Create(Ocupacao entity)
         {
             return _repository.Add(entity);

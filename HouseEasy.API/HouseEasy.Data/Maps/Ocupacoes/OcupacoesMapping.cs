@@ -1,4 +1,4 @@
-﻿using HouseEasy.Domain.Entities.Ocupacao;
+﻿using HouseEasy.Domain.Entities.Ocupacoes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -23,6 +23,10 @@ namespace HouseEasy.Data.Maps.Ocupacoes
             _ = builder.Property(x => x.CBO)
                          .HasColumnType("varchar")
                          .HasMaxLength(10).IsRequired();
+
+            _ = builder.HasOne(x => x.Usuario)
+                       .WithMany(x => x.Ocupacoes)
+                       .HasForeignKey(x => x.UsuarioId);
         }
     }
 }

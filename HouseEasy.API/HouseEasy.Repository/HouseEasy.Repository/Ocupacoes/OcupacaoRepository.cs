@@ -1,5 +1,5 @@
 ﻿using HouseEasy.Data.Context;
-using HouseEasy.Domain.Entities.Ocupacao;
+using HouseEasy.Domain.Entities.Ocupacoes;
 using HouseEasy.Domain.Interfaces.Repository.Ocupacoes;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;

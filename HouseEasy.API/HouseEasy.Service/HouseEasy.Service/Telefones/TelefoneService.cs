@@ -7,6 +7,12 @@ namespace HouseEasy.Service.Telefones
     public class TelefoneService : ITelefoneService
     {
         private readonly ITelefoneRepository _repository;
+
+        public TelefoneService(ITelefoneRepository repository)
+        {
+            _repository = repository;
+        }
+
         public Task<Telefone> Create(Telefone entity)
         {
             return _repository.Add(entity);

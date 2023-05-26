@@ -32,6 +32,10 @@ namespace HouseEasy.Data.Maps.TipoVendas
             _ = builder.Property(x => x.Logradouro)
                       .HasColumnType("varchar")
                       .HasMaxLength(150).IsRequired();
+
+            _ = builder.HasOne(x => x.Usuario)
+                       .WithOne(x => x.Endereco)
+                       .HasForeignKey<Endereco>(e => e.UsuarioId);
         }
     }
 }
