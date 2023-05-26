@@ -4,12 +4,12 @@
     {
         Task<T> Create(T entity);
 
-        Task<T> Delete(T entity);
+        bool Delete(int id);
 
         IEnumerable<T> GetAll();
 
         T GetById(int id);
 
-        Task<T> Update(T entity);
+        bool Update(T entity);
     }
 }

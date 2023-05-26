@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\HouseEasy.Data\HouseEasy.Data.csproj" />
-    <ProjectReference Include="..\..\HouseEasy.Domain\HouseEasy.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

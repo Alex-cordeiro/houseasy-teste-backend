@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["HouseEasy.API/HouseEasy.API.csproj", "HouseEasy.API/"]
-RUN dotnet restore "HouseEasy.API/HouseEasy.API.csproj"
+COPY ["HouseEasy.API/HouseEasy.API/HouseEasy.API.csproj", "HouseEasy.API/HouseEasy.API/"]
+RUN dotnet restore "HouseEasy.API/HouseEasy.API/HouseEasy.API.csproj"
 COPY . .
-WORKDIR "/src/HouseEasy.API"
+WORKDIR "/src/HouseEasy.API/HouseEasy.API"
 RUN dotnet build "HouseEasy.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

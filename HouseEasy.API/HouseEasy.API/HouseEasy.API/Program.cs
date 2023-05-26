@@ -1,6 +1,19 @@
+using HouseEasy.API.Profiles;
+using HouseEasy.Data;
+using HouseEasy.IOC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddAutoMapper(typeof(AutomapperProfile));
+
+
+builder.Services.SetupDataContext(builder.Configuration);
+
+builder.Services.SetupRepository();
+builder.Services.SetupService();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

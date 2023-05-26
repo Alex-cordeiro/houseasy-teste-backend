@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enderecos\" />
-    <Folder Include="NewFolder\" />
-    <Folder Include="Telefones\" />
-    <Folder Include="Ocupacoes\" />
-    <Folder Include="Usuarios\" />
+    <ProjectReference Include="..\..\HouseEasy.Domain\HouseEasy.Domain.csproj" />
   </ItemGroup>
 
 </Project>

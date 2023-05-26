@@ -6,7 +6,7 @@ namespace HouseEasy.Domain.Entities.Base
     {
         Task<T> Add(T entity);
         IQueryable<T> Get(Expression<Func<T, bool>> expression = null);
-        Task<T> Remove(T entity);
-        Task<T> Update(T entity);
+        void Remove(T entity);
+        T Update(T entity);
     }
 }

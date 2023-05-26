@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\HouseEasy.Domain\HouseEasy.Domain.csproj" />
+    <ProjectReference Include="..\..\HouseEasy.Repository\HouseEasy.Repository\HouseEasy.Repository.csproj" />
+    <ProjectReference Include="..\..\HouseEasy.Service\HouseEasy.Service\HouseEasy.Service.csproj" />
   </ItemGroup>
 
 </Project>
