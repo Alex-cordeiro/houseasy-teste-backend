@@ -10,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(AutomapperProfile));
 
 builder.Services.SetupDataContext(builder.Configuration);
-
+//Applying migrations automatically
+builder.Services.MigrateData();
 builder.Services.SetupRepository();
 builder.Services.SetupService();
 

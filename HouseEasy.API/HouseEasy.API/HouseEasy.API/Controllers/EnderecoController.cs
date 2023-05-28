@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HouseEasy.Application.Contracts.Request.Enderecos;
+using HouseEasy.Application.Contracts.Responses.Enderecos;
 using HouseEasy.Domain.Entities.Enderecos;
 using HouseEasy.Domain.Interfaces.Service.Enderecos;
 using Microsoft.AspNetCore.Mvc;
@@ -21,33 +22,33 @@ namespace HouseEasy.API.Controllers
 
         // GET: api/<EnderecoController>
         [HttpGet]
-        [ProducesResponseType(typeof(List<EnderecoRequest>), 200)]
+        [ProducesResponseType(typeof(List<EnderecoResponse>), 200)]
         public IActionResult GetAll()
         {
-            return Ok(_mapper.Map<List<EnderecoRequest>>(_service.GetAll()));
+            return Ok(_mapper.Map<List<EnderecoResponse>>(_service.GetAll()));
         }
 
         // GET api/<EnderecoController>/5
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(EnderecoRequest), 200)]
+        [ProducesResponseType(typeof(EnderecoResponse), 200)]
         public IActionResult GetById(int id)
         {
             Endereco? endereco = _service.GetById(id);
             if(endereco == null)
                 return NotFound("Registro não encontrado");
 
-            return Ok(_mapper.Map<EnderecoRequest>(endereco));
+            return Ok(_mapper.Map<EnderecoResponse>(endereco));
         }
 
         // POST api/<EnderecoController>
         [HttpPost]
-        [ProducesResponseType(typeof(EnderecoRequest), 200)]
-        public async Task<EnderecoRequest> Post([FromBody] EnderecoRequest newEndereco)
+        [ProducesResponseType(typeof(EnderecoResponse), 201)]
+        public async Task<EnderecoResponse> Post([FromBody] EnderecoRequest newEndereco)
         {
             Endereco? enderecoInsert = _mapper.Map<Endereco>(newEndereco);
             enderecoInsert = await _service.Create(enderecoInsert);
 
-            return _mapper.Map<EnderecoRequest>(enderecoInsert);
+            return _mapper.Map<EnderecoResponse>(enderecoInsert);
         }
 
         // PUT api/<EnderecoController>/5

@@ -9,11 +9,25 @@ namespace HouseEasy.Data
     {
         public static IServiceCollection SetupDataContext(this IServiceCollection services,IConfiguration configuration) 
         {
-            var connection = configuration.GetSection("ConexaoSqLite:SqliteConnectionString").Value;
+            var connection = configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
 
             services.AddDbContext<HouseEasyContext>(opt =>
-                opt.UseSqlite(connection)
+                opt.UseSqlServer(connection)
             );
+
+            return services;
+        }
+
+        public static IServiceCollection MigrateData(this IServiceCollection services)
+        {
+            var serviceProvider = services.BuildServiceProvider();
+            using (var scope = serviceProvider.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider
+                    .GetRequiredService<HouseEasyContext>();
+
+                dbContext.Database.Migrate();
+            }
 
             return services;
         }

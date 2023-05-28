@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HouseEasy.Application.Contracts.Request.Ocupacoes;
+using HouseEasy.Application.Contracts.Responses.Ocupacoes;
 using HouseEasy.Domain.Entities.Ocupacoes;
 using HouseEasy.Domain.Interfaces.Service.Ocupacoes;
 using Microsoft.AspNetCore.Mvc;
@@ -21,33 +22,33 @@ namespace HouseEasy.API.Controllers
 
         // GET: api/<OcupacaoController>
         [HttpGet]
-        [ProducesResponseType(typeof(List<OcupacaoRequest>), 200)]
+        [ProducesResponseType(typeof(List<OcupacaoResponse>), 200)]
         public IActionResult GetAll()
         {
-            return Ok(_mapper.Map<List<OcupacaoRequest>>(_service.GetAll()));
+            return Ok(_mapper.Map<List<OcupacaoResponse>>(_service.GetAll()));
         }
 
         // GET api/<OcupacaoController>/5
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(OcupacaoRequest), 200)]
+        [ProducesResponseType(typeof(OcupacaoResponse), 200)]
         public IActionResult GetById(int id)
         {
             Ocupacao? ocupacao = _service.GetById(id);
             if (ocupacao == null)
                 return NotFound("Registro não encontrado");
 
-            return Ok(_mapper.Map<OcupacaoRequest>(_service.GetById(id)));
+            return Ok(_mapper.Map<OcupacaoResponse>(_service.GetById(id)));
         }
 
         // POST api/<OcupacaoController>
         [HttpPost]
         [ProducesResponseType(typeof(OcupacaoRequest), 200)]
-        public async Task<OcupacaoRequest> Post([FromBody] OcupacaoRequest newOcupacao)
+        public async Task<OcupacaoResponse> Post([FromBody] OcupacaoRequest newOcupacao)
         {
             Ocupacao? ocupacaoInsert = _mapper.Map<Ocupacao>(newOcupacao);
             ocupacaoInsert = await _service.Create(ocupacaoInsert);
 
-            return _mapper.Map<OcupacaoRequest>(ocupacaoInsert);
+            return _mapper.Map<OcupacaoResponse>(ocupacaoInsert);
         }
 
         // PUT api/<OcupacaoController>/5

@@ -3,16 +3,16 @@ using HouseEasy.Domain.Entities.Ocupacoes;
 using HouseEasy.Domain.Entities.Telefones;
 using HouseEasy.Domain.Entities.Usuarios;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace HouseEasy.Data.Context
 {
     public class HouseEasyContext : DbContext
     {
-        public HouseEasyContext(DbContextOptions options) : base(options)
+        public HouseEasyContext()
         {
         }
-
-        protected HouseEasyContext()
+        public HouseEasyContext(DbContextOptions options) : base(options)
         {
         }
 
@@ -23,7 +23,10 @@ namespace HouseEasy.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-         
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=sqlserver;Database=houseEasyAPI;User Id=sa;Password=Testebackend2023");
+            }
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {

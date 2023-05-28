@@ -21,8 +21,9 @@ namespace HouseEasy.Service.Telefones
         public bool Delete(int id)
         {
             var existEntity = _repository.Get(x => x.Id.Equals(id)).FirstOrDefault();
-            if (existEntity != null)
+            if (existEntity == null)
                 return false;
+
             _repository.Remove(existEntity);
             return true;
         }

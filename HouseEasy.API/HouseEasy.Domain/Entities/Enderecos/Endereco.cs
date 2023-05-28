@@ -11,6 +11,7 @@ namespace HouseEasy.Domain.Entities.Enderecos
         public string Localidade { get; set; }
         public string UF { get; set; }
         public string CEP { get; set; }
+        public int Numero { get; set; }
         public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
     }

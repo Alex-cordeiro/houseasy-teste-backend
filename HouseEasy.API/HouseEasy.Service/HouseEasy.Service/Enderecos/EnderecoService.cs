@@ -21,13 +21,11 @@ namespace HouseEasy.Service.Enderecos
         public bool Delete(int id)
         {
             var existEntity = _repository.Get(x => x.Id.Equals(id)).FirstOrDefault();
-            if (existEntity != null)
-            {
-                _repository.Remove(existEntity);
-                return true;
-            }
+            if (existEntity == null)
+                return false;
 
-            return false;
+            _repository.Remove(existEntity);
+            return true;
         }
 
         public IEnumerable<Endereco> GetAll()
